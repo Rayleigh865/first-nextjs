@@ -4,8 +4,6 @@ import { BlogList } from "../components/BlogList";
 import {
   Container,
   Heading,
-  IconButton,
-  useColorMode
 } from "@chakra-ui/react";
 
 

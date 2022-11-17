@@ -1,17 +1,22 @@
 import { client } from '../../libs/client';
-import styles from '../../styles/Home.module.scss';
+import { Heading, Container } from '@chakra-ui/react'
+import { Header } from "../../components/Headet";
 
 export default function BlogId({ blog }) {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
+    <>
+    <Header/>
+    <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+        <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">
+        {blog.title}
+        </Heading>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.content}`,
         }}
-        className={styles.post}
       />
-    </main>
+    </Container>
+    </>
   );
 }
 
