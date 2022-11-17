@@ -3,8 +3,11 @@ import { Header } from "../components/Headet";
 import { BlogList } from "../components/BlogList";
 import {
   Container,
-  Heading
+  Heading,
+  IconButton,
+  useColorMode
 } from "@chakra-ui/react";
+
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
