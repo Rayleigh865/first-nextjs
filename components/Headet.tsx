@@ -3,24 +3,26 @@ import {
     Flex,
     Container,
     Heading,
+    useColorMode,
+    IconButton,
+    useColorModeValue
 } from '@chakra-ui/react';
-import NextLink from "next/link";
 import { FC } from 'react';
-import { ChangeThemeButton } from './ChangeThemeButton';
+import NextLink from "next/link";
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
-export const Header: FC = () => {    
+export const Header: FC = () => {  
+    const { colorMode, toggleColorMode } = useColorMode()
     return (
-        <Box px={4} bgColor="gray.100">
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
             <Container maxW="container.lg">
                 <Flex as="header" py="4" justifyContent="space-between" alignItems="center">
                     <NextLink href="/" passHref>
-                        <Heading as='h1' fontSize="2xl" cursor="pointer">
+                        <Heading as='h1' fontSize="2xl">
                             Rayleight411 nextjs sample
                         </Heading>
                     </NextLink>
-                    <span className="group inline-flex items-center text-xl font-medium pl-2 pr-3 py-2">
-                        <ChangeThemeButton />
-                    </span>
+                    <IconButton mb={1} aria-label="DarkMode Switch" icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />} onClick={toggleColorMode}/>
                 </Flex>
             </Container>
         </Box>
