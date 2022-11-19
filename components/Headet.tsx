@@ -19,7 +19,7 @@ export const Header: FC = () => {
                 <Flex as="header" py="4" justifyContent="space-between" alignItems="center">
                     <NextLink href="/" passHref>
                         <Heading as='h1' fontSize="2xl">
-                            Rayleight411 nextjs sample
+                            Rayleight411 Tech Blog
                         </Heading>
                     </NextLink>
                     <IconButton mb={1} aria-label="DarkMode Switch" icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />} onClick={toggleColorMode}/>
