@@ -1,5 +1,6 @@
 import { client } from "../libs/client";
 import { Header } from "../components/Headet";
+import { Footer } from "../components/Footer"
 import { BlogList } from "../components/BlogList";
 import {
   Container,
@@ -26,6 +27,7 @@ export default function Home({ blogs }: {blogs: any}) {
         </Heading>
         <BlogList blogs={blogs} />
     </Container>
+    <Footer/>
     </>
   );
 }

@@ -17,6 +17,8 @@
     "dayjs": "^1.11.6",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
+    "highlight.js": "^11.6.0",
+    "html-react-parser": "^3.0.4",
     "iconoir-react": "^5.4.0",
     "microcms-js-sdk": "^2.3.1",
     "next": "13.0.3",

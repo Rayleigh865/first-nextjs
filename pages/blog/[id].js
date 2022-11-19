@@ -1,22 +1,22 @@
 import { client } from '../../libs/client';
-import { Heading, Container } from '@chakra-ui/react'
+import { Heading, Container, Divider, Box } from '@chakra-ui/react'
 import { Header } from "../../components/Headet";
+import { Footer } from "../../components/Footer"
+import { MarkdownTemplate } from "../../components/MakdownTemplate"
 
 export default function BlogId({ blog }) {
   return (
-    <>
+    <Box>
     <Header/>
     <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
         <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">
         {blog.title}
         </Heading>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.content}`,
-        }}
-      />
+      <Divider marginY="8" />
+      <MarkdownTemplate source={blog.content} />
     </Container>
-    </>
+    <Footer/>
+    </Box>
   );
 }
 
