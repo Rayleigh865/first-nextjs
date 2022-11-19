@@ -8,6 +8,7 @@ export default function BlogId({ blog }) {
   return (
     <Box>
     <Header/>
+    <title>{blog.title}</title>
     <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
         <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">
         {blog.title}
@@ -20,7 +21,6 @@ export default function BlogId({ blog }) {
   );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
@@ -28,7 +28,6 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
