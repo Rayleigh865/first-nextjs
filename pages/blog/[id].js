@@ -3,12 +3,15 @@ import { Heading, Container, Divider, Box } from '@chakra-ui/react'
 import { Header } from "../../components/Headet";
 import { Footer } from "../../components/Footer"
 import { MarkdownTemplate } from "../../components/MakdownTemplate"
+import { NextSeo } from "next-seo";
 
 export default function BlogId({ blog }) {
   return (
     <Box>
     <Header/>
-    <title>{blog.title}</title>
+    <NextSeo
+            description={blog.title}
+            />
     <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
         <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">
         {blog.title}
