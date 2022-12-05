@@ -30,7 +30,6 @@ type Props = {
 const Home:NextPage<Props> = ({ blogs, totalCount }) => {
   return (
     <Box>
-    <title>Rayleight411 Tech Blog</title>
     <Header/>
     <Container as="main" maxW="container.lg" marginTop="4" marginBottom="20">
         <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">
